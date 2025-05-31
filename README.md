@@ -17,31 +17,43 @@
 ## 📁 项目结构
 
 ```
-Server/
-├── src/                    # 源代码目录
-│   ├── common/            # 公共组件
-│   │   ├── logger_enhanced.cpp      # 增强日志系统
-│   │   ├── config.cpp               # 配置管理
-│   │   └── utils.cpp                # 工具函数
-│   ├── disp/              # DISP服务
-│   │   ├── main.cpp                 # DISP主程序
-│   │   └── request_handler_enhanced.cpp  # 增强请求处理器
-│   └── ap/                # AP服务
-│       ├── main.cpp                 # AP主程序
-│       ├── processor.cpp            # 业务处理器
-│       └── db_manager.cpp           # 数据库管理器
-├── include/               # 头文件目录
-│   ├── common/           # 公共头文件
-│   ├── disp/             # DISP头文件
-│   └── ap/               # AP头文件
-├── bin/                  # 脚本目录
-│   ├── compile_enhanced.sh         # 编译脚本
-│   ├── migrate_database.sh         # 数据库迁移脚本
-│   └── config/
-│       └── migrate_db.sql          # 数据库结构
-├── docs/                 # 文档目录
-│   └── enhanced_logging_guide.md   # 日志系统指南
-└── build/                # 构建输出目录
+Server
+├── CMakeLists.txt
+├── README.md
+├── UPDATE_INSTRUCTIONS.md
+├── bin
+│   ├── compile_enhanced.sh
+│   └── config
+│       └── server.conf
+├── docs
+│   └── enhanced_logging_guide.md
+├── include
+│   ├── ap
+│   │   ├── db_manager.h
+│   │   └── processor.h
+│   ├── common
+│   │   ├── config.h
+│   │   ├── logger_enhanced.h
+│   │   └── utils.h
+│   └── disp
+│       ├── request_handler.h
+│       └── server.h
+├── install_dependencies.sh
+├── src
+│   ├── CMakeLists.txt
+│   ├── ap
+│   │   ├── db_manager.cpp
+│   │   ├── main.cpp
+│   │   └── processor.cpp
+│   ├── common
+│   │   ├── config.cpp
+│   │   ├── logger_enhanced.cpp
+│   │   └── utils.cpp
+│   └── disp
+│       ├── main.cpp
+│       ├── request_handler.cpp
+│       └── server.cpp
+└── tmp
 ```
 
 ## 🚀 快速开始
@@ -54,21 +66,15 @@ chmod +x compile_enhanced.sh
 ./compile_enhanced.sh
 ```
 
-### 2. 数据库设置
 
-```bash
-# 运行数据库迁移
-./migrate_database.sh
-```
-
-### 3. 启动服务
+### 2. 启动服务
 
 ```bash
 # 启动AP服务
-./build/ap_enhanced
+./ap
 
 # 启动DISP服务（新终端）
-./build/disp_enhanced
+./disp
 ```
 
 ## 🔧 功能特性
