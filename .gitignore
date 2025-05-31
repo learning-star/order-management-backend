@@ -1,0 +1,59 @@
+# 编译生成的文件
+/build/
+*.o
+*.a
+*.so
+*.dylib
+*.exe
+
+# 可执行文件
+/bin/ap
+/bin/disp
+
+
+# CMake生成的文件
+CMakeCache.txt
+CMakeFiles/
+Makefile
+cmake_install.cmake
+CTestTestfile.cmake
+
+# IDE文件
+.vscode/
+.vs/
+*.vcxproj*
+*.sln
+
+# 日志文件
+*.log
+logs/
+
+# 配置文件（可能包含敏感信息）
+config/*.conf
+config/*.ini
+!config/*.example.*
+
+# 临时文件
+*.tmp
+*.temp
+*~
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+*.stackdump
+
+# 运行时生成的文件
+*.pid
+core.*
+
+# 数据库相关
+*.db
+*.sqlite
+*.sqlite3
+
+# 备份文件
+*.bak
+*.backup
